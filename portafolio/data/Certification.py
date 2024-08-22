@@ -15,7 +15,7 @@ class Certification:
 with open("assets/data/certificados.json") as file:
     app_data = json.load(file)
 
-certificado = [
+Certificado = [
     Certification(
         item["title"],
         item["description"],

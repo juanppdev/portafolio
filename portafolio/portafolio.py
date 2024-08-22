@@ -2,7 +2,7 @@ import reflex as rx
 from portafolio.views.navbar import navbar
 from portafolio.views.header import header
 from portafolio.views.certifications import Certifications
-from portafolio.data.Certification import certificado
+from portafolio.data.Certification import Certificado
 from portafolio.views.projects import projects
 from portafolio.views.technologies import Technologies
 from portafolio.views.footer import footer
@@ -13,7 +13,7 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                Certifications(certificado),
+                Certifications(Certificado),
                 projects(),
                 Technologies(),
                 max_width="950px",
