@@ -1,10 +1,11 @@
 import reflex as rx
 import requests
+import os
 
 # Define the URLs and the access token
 repos_url = 'https://api.github.com/users/Juanppdev/repos?sort=created'
 graphql_url = 'https://api.github.com/graphql'
-access_token = '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'
+access_token = os.environ.get("ACCESS_TOKEN")
 
 # Fetch the repositories
 response = requests.get(repos_url)
