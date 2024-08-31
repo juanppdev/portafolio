@@ -1,4 +1,5 @@
 import reflex as rx
+import reflex.model
 from portafolio.views.navbar import navbar
 from portafolio.views.header import header
 from portafolio.views.certifications import Certifications
