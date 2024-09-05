@@ -3,10 +3,13 @@ name: Static Build
 on:
   schedule:
     - cron: '5 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    if: github.repository == 'juanppdev/portafolio' && github.ref == 'refs/heads/main'
+    if: github.repository == 'juanppdev/portafolio'
     runs-on: ubuntu-latest
 
     permissions:
@@ -24,7 +27,7 @@ jobs:
       - name: Run build script
         run: |
           chmod +x ./remote_build.sh
-          ./remote_build.sh
+          ./build.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
