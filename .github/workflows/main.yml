@@ -27,7 +27,7 @@ jobs:
       - name: Run build script
         run: |
           chmod +x ./remote_build.sh
-          ./build.sh
+          ./remote_build.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
