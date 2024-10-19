@@ -6,4 +6,5 @@ rm -rf public
 reflex init
 reflex export --frontend-only
 unzip frontend.zip -d public
-rm -f frontend
+rm -f frontend.zip
+deactivate
