@@ -23,7 +23,7 @@ jobs:
 
       - name: Run build script
         run: |
-          chmod +x ./remote_build.sh
+          chmod +x ./build.sh
           ./remote_build.sh
 
       - name: Commit and Push changes
