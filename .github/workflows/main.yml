@@ -1,31 +1,32 @@
 name: Static Build
-
-on:
+on: 
   schedule:
     - cron: '5 * * * *'
-
-jobs:
+jobs: 
   build:
     if: github.repository == 'juanppdev/portafolio' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
-    permissions:
+    permissions: 
       contents: write
-
-    steps:
+    steps: 
       - name: Checkout repo
         uses: actions/checkout@v4
-
+        
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+          
       - name: Run build script
         run: |
           chmod +x ./build.sh
           ./build.sh
-
+          
+      - name: Fetch remote changes
+        run: |
+          git fetch origin main
+          git merge origin/main
+          
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
